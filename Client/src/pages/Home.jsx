@@ -5,7 +5,9 @@ import { Particles } from "../components/magicui/particles";
 import { Marquee } from "../components/magicui/marquee";
  import {cn } from "../lib/utils";
  import { FaCode, FaPaintBrush, FaBullhorn, FaLanguage, FaVideo, FaRobot, FaMusic, FaBriefcase, FaUserTie } from "react-icons/fa";
- 
+ import { Button } from "../components/ui/button";
+import { BoxReveal } from "../components/magicui/box-reveal";
+import { AvatarCircles } from "../components/magicui/avatar-circles";
 
 
 import {
@@ -74,6 +76,36 @@ const categories = [
 
 
 
+
+const avatars = [
+  {
+    imageUrl: "https://avatars.githubusercontent.com/u/16860528",
+    profileUrl: "https://github.com/dillionverma",
+  },
+  {
+    imageUrl: "https://avatars.githubusercontent.com/u/20110627",
+    profileUrl: "https://github.com/tomonarifeehan",
+  },
+  {
+    imageUrl: "https://avatars.githubusercontent.com/u/106103625",
+    profileUrl: "https://github.com/BankkRoll",
+  },
+  {
+    imageUrl: "https://avatars.githubusercontent.com/u/59228569",
+    profileUrl: "https://github.com/safethecode",
+  },
+  {
+    imageUrl: "https://avatars.githubusercontent.com/u/59442788",
+    profileUrl: "https://github.com/sanjay-mali",
+  },
+  {
+    imageUrl: "https://avatars.githubusercontent.com/u/89768406",
+    profileUrl: "https://github.com/itsarghyadas",
+  },
+];
+
+
+
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
@@ -128,14 +160,25 @@ const Home = () => {
 
 
 
-      <div className="w-[80vw] bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg p-10 h-[80vh] border border-gray-400 rounded-3xl flex justify-between items-center">
+      <div className="w-[80vw]  backdrop-blur-lg border border-white/20 shadow-lg p-10 h-[80vh] border border-gray-400 rounded-3xl flex justify-between items-center">
    <div className="w-[20%] flex justify-start items-start  h-full">
     <img src="https://res.cloudinary.com/upwork-cloud-acquisition-prod/image/upload/f_auto,q_auto/brontes/uma-hero/image-left.png" alt=""  className='h-full  object-contain w-full'/>
    </div>
-   <div className="w-[50%] h-full flex flex-col justify-start items-center gap-5">
-        <h1 className='text-[3rem]'>We connect people to bring projects to life</h1>
-        
-        <p className='text-gray-400'>Find high-quality talent or open jobs with the help of AI tools that keep you in control.</p>
+   <div className="w-[50%] h-full flex flex-col justify-center items-center gap-5">
+
+   <BoxReveal boxColor={"#16A34A"} duration={0.5}>
+       
+        <h1 className='text-[3rem] text-center'>We connect people to bring projects to life <span className="text-green-400">.</span></h1>
+
+      </BoxReveal>
+       
+      <BoxReveal boxColor={"#16A34A"} duration={0.5}>
+       
+     
+       <p className='text-gray-300 text-center'>Find high-quality talent or open jobs with the help of AI tools that keep you in control. <span className="text-green-400">.</span></p>
+     </BoxReveal>
+        <p>Our Top Freelancers </p>
+      <AvatarCircles numPeople={99} avatarUrls={avatars} />;
 
         <div className="w-full flex h-[3rem] ">
           <img src="https://res.cloudinary.com/upwork-cloud-acquisition-prod/image/upload/c_fit/brontes/uma-hero/logo-airbnb-grey.svg" alt=""  className='h-10px w-10px object-contain'/>
@@ -184,7 +227,7 @@ const Home = () => {
     <Carousel className="w-[80vw] h-[12rem]  mb-[7rem]">
   <CarouselContent className="-ml-1">
     {categories.map((category, index) => ( // Fixed `.slice(0, 6)`
-      <CarouselItem key={index} className="pl-1  ml-4 md:basis-1/2 lg:basis-[15%]">
+      <CarouselItem key={index} className="pl-1  ml-4  lg:basis-[15%]">
         <div className="p-1">
           <MagicCard
             className="cursor-pointer flex items-center justify-center flex-col border border-gray-400 whitespace-nowrap text-lg p-6 w-40 h-40 rounded-xl shadow-lg"
@@ -303,7 +346,7 @@ What our customers are saying</p>
 
 
 
-    <div className="relative  flex w-full flex-col items-center justify-center overflow-hidden">
+    <div className="relative  flex w-full flex-col items-center mb-[5rem] justify-center overflow-hidden">
       <Marquee pauseOnHover className="[--duration:20s] ">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
@@ -314,6 +357,13 @@ What our customers are saying</p>
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
+      <Marquee pauseOnHover className="[--duration:20s] ">
+        {firstRow.map((review) => (
+          <ReviewCard key={review.username} {...review} />
+        ))}
+      </Marquee>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[#14181C]"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[#14181C]"></div>
      
     </div>
 
