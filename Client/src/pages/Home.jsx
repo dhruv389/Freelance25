@@ -264,7 +264,7 @@ const Home = () => {
         </div>
         <div className="relative">
           <img
-            src="https://img.freepik.com/free-photo/businesswoman-business-teammeeting-conference-videocall-online-greeting-remotely-collegues_482257-10095.jpg?t=st=1740292137~exp=1740295737~hmac=84de113d04f04b58de4196dd056061cafd8d3ab3892e6c6762c0250b833c2c32&w=1800"
+            src="https://img.freepik.com/free-photo/businesswoman-business-teammeeting-conference-videocall-online-greeting-remotely-collegues_482257-10095.jpg?t=st=1740422190~exp=1740425790~hmac=973a0130f6133711327c5e1e6e6364b154fddfe8a30dd186639bc2d096c402b0&w=1800"
             alt="Professional working"
             className="w-full h-auto rounded-lg object-cover"
           />
