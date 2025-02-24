@@ -8,6 +8,8 @@ import DevProfile from "./pages/DevProfile";
 import OptionMenu from "./pages/OptionMenu";
 import SubOptions from "./pages/SubOptions";
 import ClientProfile from "./pages/ClientProfile";
+import MainDevProfilePage from "./pages/DevProfileCreation/MainDevProfilePage";
+import DevProject from "./pages/DevProject";
 
 function App() {
   const router = createBrowserRouter([
@@ -22,6 +24,8 @@ function App() {
       { path: "devprofile", element: <DevProfile /> },
       { path: "optionmenu", element: <OptionMenu/> },
       { path: "suboption", element: <SubOptions/> },
+      { path: "devcreate", element: <MainDevProfilePage/> },
+      { path: "devproject", element: <DevProject/> },
 
         // {
         //   path: 'admindashboard',

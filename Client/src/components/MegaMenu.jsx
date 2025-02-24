@@ -138,12 +138,12 @@ export default function MegaMenu() {
       
       {Object.keys(freelancingOptions).map((category) => (
         <div className="dropdown text-white ">
-          <button className="dropbtn text-sm" key={category}>
+          <button className="dropbtn w-[12rem] text-sm overflow-hidden" key={category}>
             {" "}
             {category}
             <i className="fa fa-caret-down"></i>
           </button>
-          <div className="dropdown-content z-50 bg-white/20 backdrop-blur-lg border border-white/20 shadow-lg">
+          <div className="dropdown-content z-50 bg-black opacity-90 shadow-lg">
             <div className="header ">
              
              

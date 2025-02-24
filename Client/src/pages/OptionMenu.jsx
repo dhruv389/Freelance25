@@ -45,7 +45,7 @@ const programmingTechData = [
 
 function OptionMenu() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="w-[84vw] mx-auto px-4 py-8">
       {/* Programming & Tech Section */}
       <section className="bg-gradient-to-r from-green-400 to-blue-500 text-white p-8 rounded-lg mb-8">
         <h1 className="text-4xl font-bold mb-4">Programming & Tech</h1>
