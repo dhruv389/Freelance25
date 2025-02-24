@@ -55,9 +55,9 @@ const Header = () => {
   };
 
   return (
-    <div className="flex flex-col gap-3 ">
+    <div className="flex flex-col gap-3 pt-5  ">
 
-      <div className="navbar ">
+      <div className="navbar mb-2">
         <div className="h-[2rem] gap-4 custom:gap-1 custom:w-full  flex w-[40%]">
           <div className="hidden custom:flex custom:pt-4"> </div>
 
