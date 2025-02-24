@@ -5,7 +5,7 @@ import { Particles } from "../components/magicui/particles";
 import { Marquee } from "../components/magicui/marquee";
  import {cn } from "../lib/utils";
  import { FaCode, FaPaintBrush, FaBullhorn, FaLanguage, FaVideo, FaRobot, FaMusic, FaBriefcase, FaUserTie } from "react-icons/fa";
- import { ShineBorder } from "../components/magicui/shine-border";
+ 
 
 
 import {
@@ -16,7 +16,7 @@ import {
   CarouselPrevious,
 } from "../components/ui/carousel"
  
- import { NeonGradientCard } from "../components/magicui/neon-gradient-card";
+
  
  import { MagicCard } from "../components/magicui/magic-card";
 
