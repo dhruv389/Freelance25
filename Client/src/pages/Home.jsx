@@ -121,42 +121,37 @@ const Home = () => {
 
 
 
-    <div className="relative flex h-[100vh] w-full flex-col items-center justify-center overflow-hidden rounded-lg  ">
+    <div className="relative mt-[6rem] flex h-[80vh] w-full flex-col items-center justify-center overflow-hidden rounded-lg  ">
       {/* <span className="pointer-events-none z-10 whitespace-pre-wrap text-center text-8xl font-semibold leading-none">
         Particles
       </span> */}
 
 
 
-      <div className="relative w-screen  flex flex-col items-center justify-center  h-[70vh]  text-white px-6 text-center">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent  opacity-50"></div>
-      
-      <h1 className="text-4xl md:text-6xl font-bold relative ">
-        Powerful <span className="text-green-400">motion design</span>
-        <br /> in the browser
-      </h1>
-      
-      <p className="text-gray-400 mt-4 text-lg md:text-xl relative z-10 max-w-2xl">
-        Theatre.js is a javascript animation library with a professional motion design toolset. It helps you create any animation, from cinematic scenes in THREE.js, to delightful UI interactions.
-      </p>
-      
-      <button className="mt-6 px-6 py-3 bg-white text-black font-semibold rounded-lg shadow-lg relative z-10 hover:scale-105 transition-transform">
-        Get started with Theatre.js
-      </button>
-      
-      {/* Gradient Glow Effect */}
+      <div className="w-[80vw] bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg p-10 h-[80vh] border border-gray-400 rounded-3xl flex justify-between items-center">
+   <div className="w-[20%] flex justify-start items-start  h-full">
+    <img src="https://res.cloudinary.com/upwork-cloud-acquisition-prod/image/upload/f_auto,q_auto/brontes/uma-hero/image-left.png" alt=""  className='h-full  object-contain w-full'/>
+   </div>
+   <div className="w-[50%] h-full flex flex-col justify-start items-center gap-5">
+        <h1 className='text-[3rem]'>We connect people to bring projects to life</h1>
+        
+        <p className='text-gray-400'>Find high-quality talent or open jobs with the help of AI tools that keep you in control.</p>
 
+        <div className="w-full flex h-[3rem] ">
+          <img src="https://res.cloudinary.com/upwork-cloud-acquisition-prod/image/upload/c_fit/brontes/uma-hero/logo-airbnb-grey.svg" alt=""  className='h-10px w-10px object-contain'/>
+          
+          <img src="https://res.cloudinary.com/upwork-cloud-acquisition-prod/image/upload/c_fit/brontes/uma-hero/logo-bissell-grey.svg" alt="" className='h-10px w-10px object-contain' />
 
+          <img src="https://res.cloudinary.com/upwork-cloud-acquisition-prod/image/upload/c_fit/brontes/uma-hero/logo-microsoft-grey.svg" alt="" className='h-10px w-10px object-contain' />
+        </div>
+   </div>
+   <div className="w-[20%] h-full">
+    <img src="https://res.cloudinary.com/upwork-cloud-acquisition-prod/image/upload/f_auto,q_auto/brontes/uma-hero/image-right.png" alt=""  className='h-full  object-contain w-full'/>
+   </div>
+</div>
 
-
-
-   
-
-      
-      <div className="absolute bottom-35 h-[15rem] w-[18rem] bg-green-400 opacity-20 blur-2xl rounded-full"></div>
+      <div className="absolute -top-20 left-[15rem] h-[15rem] w-[18rem] bg-green-400 opacity-20 blur-2xl rounded-full"></div>
       <div className="absolute bottom-30 h-[15rem] w-[18rem] bg-green-800 opacity-20 blur-2xl rounded-full"></div>
-    </div>
 
       <Particles
         className="absolute inset-0 z-0"
@@ -171,6 +166,7 @@ const Home = () => {
 
 
     </div>
+
 
 
 

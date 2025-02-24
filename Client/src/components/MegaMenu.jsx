@@ -1,21 +1,10 @@
 import React, { useState, forwardRef } from "react";
 
-import { motion } from "framer-motion";
+
 
 import { Link } from "react-router-dom";
 
-import { cn } from "../lib/utils";
-import clsx from "clsx";
 
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "../components/ui/navigation-menu";
 
 const freelancingOptions = {
   "Web Development": [
@@ -145,29 +134,35 @@ export default function MegaMenu() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div class="navbar2">
+    <div className="navbar2 flex overflow-x-auto overflow-y-hidden">
       
       {Object.keys(freelancingOptions).map((category) => (
-        <div class="dropdown">
-          <button class="dropbtn" key={category}>
+        <div className="dropdown text-white ">
+          <button className="dropbtn text-sm" key={category}>
             {" "}
             {category}
-            <i class="fa fa-caret-down"></i>
+            <i className="fa fa-caret-down"></i>
           </button>
-          <div class="dropdown-content">
-            <div class="header">
-              <h2>Mega Menu</h2>
+          <div className="dropdown-content z-50 bg-white/20 backdrop-blur-lg border border-white/20 shadow-lg">
+            <div className="header ">
+             
+             
+              <Link to={`/optionmenu`} className=" w-full flex justify-start ">
+                 <p className="w-[30%] flex justify-start bg-slate-700 pl-5 py-4 rounded-md h-full "> {category}</p>
+             </Link>
+
             </div>
-            <div class="row">
+            <div className="row" >
               {freelancingOptions[category].map((option) => (
-                <div className="column">
-                <a
+                <div className="column"  key={option.title}>
+                <Link
+                to="/suboption"
                   key={option.title}
                   href={option.href}
-                  className="block px-4 py-2 hover:bg-gray-200 rounded-md"
+                  className="block px-4 py-2 hover:bg-gray-200 text-white rounded-md"
                 >
                   {option.title}
-                </a>
+                </Link>
                 </div>
             
               ))}

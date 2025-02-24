@@ -58,7 +58,7 @@ const firebase = useFirebase();
     <div className="flex flex-col gap-3 ">
 
     <div className="navbar ">
-    <div className="h-[3rem] gap-4 custom:gap-1 custom:w-full  flex w-[40%]">
+    <div className="h-[2rem] gap-4 custom:gap-1 custom:w-full  flex w-[40%]">
     <div className="hidden custom:flex custom:pt-4"> </div>
    
     <Link to="/" className="smj-icon bg-yellow-300 rounded-full  h-[3rem]   w-[5rem]" >
@@ -66,7 +66,7 @@ const firebase = useFirebase();
     </Link>
           
             <div className="  flex justify-start items-center custom:ml-2 custom:flex custom:justify-center custom:items-center w-full">
-                <h1 className=" text-black font-semibold text-[2.5rem] custom:text-[2rem]">RailMadad</h1>
+                <h1 className=" text-black font-semibold text-[2.5rem] custom:text-[2rem]">Freelance</h1>
                
             </div>
             </div>

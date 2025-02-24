@@ -100,9 +100,10 @@ html {
 
 
 .navbar2 {
-  overflow:scroll;
+  
   background-color: #333;
   font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
 
 .navbar2 a {
@@ -128,16 +129,18 @@ html {
   background-color: inherit;
   font: inherit;
   margin: 0;
+   font-size: small;
 }
 
 .navbar2 a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  /* background-color: white; */
+  color:black;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  /* background: white; */
   width: 100%;
   left: 0;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -145,7 +148,7 @@ html {
 }
 
 .dropdown-content .header {
-  background: red;
+ 
   padding: 16px;
   color: white;
 }
@@ -159,13 +162,13 @@ html {
   float: left;
   width: 33.33%;
   padding: 10px;
-  background-color: #ccc;
-  height: 250px;
+  
+ 
 }
 
 .column a {
   float: none;
-  color: black;
+ 
   padding: 16px;
   text-decoration: none;
   display: block;
