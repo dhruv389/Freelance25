@@ -8,6 +8,7 @@ import { Marquee } from "../components/magicui/marquee";
  import { Button } from "../components/ui/button";
 import { BoxReveal } from "../components/magicui/box-reveal";
 import { AvatarCircles } from "../components/magicui/avatar-circles";
+import { BorderBeam } from "../components/magicui/border-beam";
 
 
 import {
@@ -153,14 +154,14 @@ const Home = () => {
 
 
 
-    <div className="relative mt-[6rem] flex h-[80vh] w-full flex-col items-center justify-center overflow-hidden rounded-lg  ">
+    <div className="relative  flex h-[80vh] w-full flex-col items-center justify-center overflow-hidden rounded-lg  ">
       {/* <span className="pointer-events-none z-10 whitespace-pre-wrap text-center text-8xl font-semibold leading-none">
         Particles
       </span> */}
 
 
 
-      <div className="w-[80vw]  backdrop-blur-lg border border-white/20 shadow-lg p-10 h-[80vh] border border-gray-400 rounded-3xl flex justify-between items-center">
+      <div className="w-[78vw]  backdrop-blur-lg border border-white/20 shadow-lg p-7 h-[80vh] border border-gray-400 rounded-3xl flex justify-between items-center">
    <div className="w-[20%] flex justify-start items-start  h-full">
     <img src="https://res.cloudinary.com/upwork-cloud-acquisition-prod/image/upload/f_auto,q_auto/brontes/uma-hero/image-left.png" alt=""  className='h-full  object-contain w-full'/>
    </div>
@@ -191,6 +192,7 @@ const Home = () => {
    <div className="w-[20%] h-full">
     <img src="https://res.cloudinary.com/upwork-cloud-acquisition-prod/image/upload/f_auto,q_auto/brontes/uma-hero/image-right.png" alt=""  className='h-full  object-contain w-full'/>
    </div>
+   <BorderBeam duration={10} size={500} />
 </div>
 
       <div className="absolute -top-20 left-[15rem] h-[15rem] w-[18rem] bg-green-400 opacity-20 blur-2xl rounded-full"></div>
@@ -239,6 +241,7 @@ const Home = () => {
             </p>
           </MagicCard>
         </div>
+       
       </CarouselItem>
     ))}
   </CarouselContent>
@@ -250,7 +253,7 @@ const Home = () => {
 
 
 
-    <section className="relative w-[90vw] bg-gray-900 border-gray-600 rounded-xl border text-white py-16 px-6 md:px-12 lg:px-20">
+    <section className="relative w-[90vw]  border-gray-600 rounded-xl border text-white py-16 px-6 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div className="space-y-6">
           <p className="text-lg text-gray-300">For clients</p>
@@ -281,6 +284,7 @@ const Home = () => {
           <p className="text-sm mt-2">Consultations →</p>
         </div>
       </div>
+      <BorderBeam duration={15} size={400} />
     </section>
 
 
@@ -297,7 +301,7 @@ const Home = () => {
 
 
 
-    <section className="bg-[#14181C] py-16 px-6 md:px-12 lg:px-20 text-white">
+    <section className="bg- py-16 px-6 md:px-12 lg:px-20 text-white">
     
       <div className="max-w-7xl mx-auto text-center">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -337,7 +341,7 @@ const Home = () => {
 
         {/* Main Content */}
         <div className="flex w-[90%] justify-around items-end">
-        <div className="absolute -top-20 left-[15rem] h-[15rem] w-[18rem] bg-green-400 opacity-20 blur-2xl rounded-full"></div>
+       
         <div className="absolute bottom-30 h-[15rem] w-[18rem] bg-green-800 opacity-20 blur-2xl rounded-full"></div>
         <div className="mt-16 flex flex-col justify-start items-start w-[50%]">
           <h2 className="text-3xl text-start md:text-4xl font-bold text-white">
@@ -416,8 +420,8 @@ What our customers are saying</p>
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[#14181C]"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[#14181C]"></div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-black"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-black"></div>
      
     </div>
 

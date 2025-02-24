@@ -1,5 +1,11 @@
 import React, { useState, forwardRef } from "react";
-
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../components/ui/carousel"
 
 
 import { Link } from "react-router-dom";
@@ -134,16 +140,25 @@ export default function MegaMenu() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="navbar2 flex overflow-x-auto overflow-y-hidden">
+    <div className="navbar2 border border-gray-500 flex overflow-x-auto overflow-y-hidden">
       
+
+
+
+
+
+
+
+
+
       {Object.keys(freelancingOptions).map((category) => (
-        <div className="dropdown text-white ">
+        <div className="dropdown text-white " key={category}>
           <button className="dropbtn w-[12rem] text-sm overflow-hidden" key={category}>
             {" "}
             {category}
             <i className="fa fa-caret-down"></i>
           </button>
-          <div className="dropdown-content z-50 bg-black opacity-90 shadow-lg">
+          <div className="dropdown-content z-50 bg-black border border-gray-400 shadow-lg">
             <div className="header ">
              
              
