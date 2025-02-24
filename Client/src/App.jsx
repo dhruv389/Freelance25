@@ -8,7 +8,7 @@ import DevProfile from "./pages/DevProfile";
 import OptionMenu from "./pages/OptionMenu";
 import SubOptions from "./pages/SubOptions";
 import ClientProfile from "./pages/ClientProfile";
-import MainDevProfilePage from "./pages/DevProfileCreation/mainDevProfilePage";
+import MainDevProfilePage from "./pages/DevProfileCreation/MainDevProfilePage";
 import DevProject from "./pages/DevProject";
 
 function App() {
