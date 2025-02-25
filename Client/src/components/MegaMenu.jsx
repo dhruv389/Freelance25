@@ -140,7 +140,7 @@ export default function MegaMenu() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="navbar2 border border-gray-500 flex overflow-x-auto overflow-y-hidden">
+    <div className="navbar2 border border-gray-500 flex overflow-x-hidden overflow-y-hidden">
       
 
 
