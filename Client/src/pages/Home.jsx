@@ -8,6 +8,7 @@ import { Marquee } from "../components/magicui/marquee";
  import { Button } from "../components/ui/button";
 import { BoxReveal } from "../components/magicui/box-reveal";
 import { AvatarCircles } from "../components/magicui/avatar-circles";
+import { BorderBeam } from "../components/magicui/border-beam";
 
 
 import {
@@ -153,14 +154,14 @@ const Home = () => {
 
 
 
-    <div className="relative mt-[6rem] flex h-[80vh] w-full flex-col items-center justify-center overflow-hidden rounded-lg  ">
+    <div className="relative  flex h-[80vh] w-full flex-col items-center justify-center overflow-hidden rounded-lg  ">
       {/* <span className="pointer-events-none z-10 whitespace-pre-wrap text-center text-8xl font-semibold leading-none">
         Particles
       </span> */}
 
 
 
-      <div className="w-[80vw]  backdrop-blur-lg border border-white/20 shadow-lg p-10 h-[80vh] border border-gray-400 rounded-3xl flex justify-between items-center">
+      <div className="w-[78vw]  backdrop-blur-lg border border-white/20 shadow-lg p-7 h-[80vh] border border-gray-400 rounded-3xl flex justify-between items-center">
    <div className="w-[20%] flex justify-start items-start  h-full">
     <img src="https://res.cloudinary.com/upwork-cloud-acquisition-prod/image/upload/f_auto,q_auto/brontes/uma-hero/image-left.png" alt=""  className='h-full  object-contain w-full'/>
    </div>
@@ -191,6 +192,7 @@ const Home = () => {
    <div className="w-[20%] h-full">
     <img src="https://res.cloudinary.com/upwork-cloud-acquisition-prod/image/upload/f_auto,q_auto/brontes/uma-hero/image-right.png" alt=""  className='h-full  object-contain w-full'/>
    </div>
+   <BorderBeam duration={10} size={500} />
 </div>
 
       <div className="absolute -top-20 left-[15rem] h-[15rem] w-[18rem] bg-green-400 opacity-20 blur-2xl rounded-full"></div>
@@ -239,6 +241,7 @@ const Home = () => {
             </p>
           </MagicCard>
         </div>
+       
       </CarouselItem>
     ))}
   </CarouselContent>
@@ -250,7 +253,7 @@ const Home = () => {
 
 
 
-    <section className="relative w-[85vw] bg-gray-900 border-gray-100 border text-white py-16 px-6 md:px-12 lg:px-20">
+    <section className="relative w-[90vw]  border-gray-600 rounded-xl border text-white py-16 px-6 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div className="space-y-6">
           <p className="text-lg text-gray-300">For clients</p>
@@ -281,6 +284,7 @@ const Home = () => {
           <p className="text-sm mt-2">Consultations →</p>
         </div>
       </div>
+      <BorderBeam duration={15} size={400} />
     </section>
 
 
@@ -289,47 +293,101 @@ const Home = () => {
 
 
 
-    <div className="flex w-[90vw] border justify-around flex-col md:flex-row items-center border-gray-700  p-8 rounded-lg">
-      {/* Left Side - Signup Box */}
-      <MagicCard
-        className="cursor- h-[15rem] flex-col w-[40%] items-center border border-gray-800 justify-center whitespace-nowrap text-4xl"
-        gradientColor="#D9D9D955" // Dark mode subtle glow
-      >
-        Magic
-      </MagicCard>
+  
 
-      {/* Right Side - Features */}
-      <div className="md:ml-8 w-[50%] md:w-1/2 mt-6 md:mt-0 ">
-        <h1 className="text-2xl font-semibold mb-4">Up your work game, it's easy</h1>
-        <ul className="space-y-3">
-          <li className="flex items-start gap-2">
-            <span>✏️</span>
-            <div>
-              <h3 className="font-semibold">No cost to join</h3>
-              <p className="text-gray-600">Register and browse talent profiles, explore projects, or even book a consultation.</p>
+
+
+
+
+
+
+    <section className="bg- py-16 px-6 md:px-12 lg:px-20 text-white">
+    
+      <div className="max-w-7xl mx-auto text-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Card 1 */}
+          <div className=" backdrop-blur-md p-6 rounded-2xl shadow-lg flex flex-col items-center text-center">
+            <div className="w-12 h-12 bg-red-500/20 flex items-center justify-center rounded-full">
+              <span className="text-red-400 text-xl">🔍</span>
             </div>
-          </li>
-          <li className="flex items-start gap-2">
-            <span>📌</span>
-            <div>
-              <h3 className="font-semibold">Post a job and hire top talent</h3>
-              <p className="text-gray-600">Finding talent doesn’t have to be a chore. Post a job or we can search for you!</p>
+            <h3 className="font-semibold text-lg mt-4">Struggling to find skilled freelancers?</h3>
+            <p className="text-gray-300 mt-2">
+              Get access to top professionals who deliver quality work on time.
+            </p>
+          </div>
+
+          {/* Card 2 */}
+          <div className=" backdrop-blur-md p-6 rounded-2xl shadow-lg flex flex-col items-center text-center">
+            <div className="w-12 h-12 bg-blue-500/20 flex items-center justify-center rounded-full">
+              <span className="text-blue-400 text-xl">⚡</span>
             </div>
-          </li>
-          <li className="flex items-start gap-2">
-            <span>💼</span>
-            <div>
-              <h3 className="font-semibold">Work with the best—without breaking the bank</h3>
-              <p className="text-gray-600">Upwork makes it affordable to up your work and take advantage of low transaction rates.</p>
+            <h3 className="font-semibold text-lg mt-4">Tired of handling projects alone?</h3>
+            <p className="text-gray-300 mt-2">
+              Scale your business effortlessly by hiring expert freelancers.
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className=" backdrop-blur-md p-6 rounded-2xl shadow-lg flex flex-col items-center text-center">
+            <div className="w-12 h-12 bg-green-500/20 flex items-center justify-center rounded-full">
+              <span className="text-green-400 text-xl">💰</span>
             </div>
-          </li>
-        </ul>
-        <div className="mt-4 flex gap-4">
-          <button className="bg-green-600 text-white px-4 py-2 rounded-lg">Sign up for free</button>
-          <button className="border border-green-600 text-green-600 px-4 py-2 rounded-lg">Learn how to hire</button>
+            <h3 className="font-semibold text-lg mt-4">No budget for a full-time team?</h3>
+            <p className="text-gray-300 mt-2">
+              Hire freelancers to work on-demand without long-term costs.
+            </p>
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="flex w-[90%] justify-around items-end">
+       
+        <div className="absolute bottom-30 h-[15rem] w-[18rem] bg-green-800 opacity-20 blur-2xl rounded-full"></div>
+        <div className="mt-16 flex flex-col justify-start items-start w-[50%]">
+          <h2 className="text-3xl text-start md:text-4xl font-bold text-white">
+            Grow Your Business with  Verified Freelancers
+           
+          </h2>
+          <p className="text-gray-400 text-start mt-4 ">
+            Find the best talents in design, development, marketing, and more. 
+            Secure, fast, and hassle-free freelancing experience.
+          </p>
+
+          {/* Tech & Features */}
+          <p className="font-medium text-gray-300 mt-6">
+            🚀 Verified Experts | 🔒 Secure Transactions | ⚡ Quick Delivery
+          </p>
+
+          {/* Profile Section */}
+          <div className="mt-8 flex items-center justify-center gap-4">
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="Freelancer Profile"
+              className="w-12 h-12 rounded-full border border-white/30"
+            />
+            <div className="text-left">
+              <h4 className="font-semibold text-white">Alex Johnson</h4>
+              <p className="text-gray-400 text-sm">Freelance Web Developer</p>
+            </div>
+          </div>
+          </div>
+
+          <div className="w-[30%] h-full">
+            <img src="https://lw.works/_next/image?url=%2Fimages%2Fprojects%2Furlbox-contentlayer-light.png&w=3840&q=75" className='h-[19rem] w-full shadow-xl  shadow-slate-700' alt="" />
+          </div>
+
         </div>
       </div>
-    </div>
+    </section>
+
+
+
+
+
+
+
+
+
 
 
      
@@ -362,8 +420,8 @@ What our customers are saying</p>
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[#14181C]"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[#14181C]"></div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-black"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-black"></div>
      
     </div>
 

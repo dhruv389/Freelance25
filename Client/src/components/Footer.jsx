@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import {BorderBeam} from './magicui/border-beam';
 
 const Footer = () => {
   const categories = [
@@ -46,9 +47,9 @@ const Footer = () => {
       variants={footerVariants}
       initial="hidden"
       animate="visible"
-      className="bg-black mt-10 text-white py-12 px-4 md:px-8 lg:px-16"
+      className="bg-black  shadow-top shadow-green-400 relative  mt-10 text-white py-12 px-4 md:px-8 lg:px-16"
     >
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+      <div className="container mx-auto   grid grid-cols-1 md:grid-cols-5 gap-8">
         <div className="space-y-4">
           <h3 className="font-semibold text-lg">Categories</h3>
           <motion.ul variants={listItemVariants} initial="hidden" animate="visible">
@@ -104,6 +105,7 @@ const Footer = () => {
           </motion.ul>
         </div>
       </div>
+      
     </motion.footer>
   );
 };

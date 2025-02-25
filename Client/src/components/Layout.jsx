@@ -15,14 +15,14 @@ const Layout = () => {
 
   return (
     
-    <div className="content">
+    <div className="content  pt-[10rem]">
      
     
 
       <Header/>
      
      
-      <Outlet/>
+      <Outlet />
   
       <Footer/>
       </div>

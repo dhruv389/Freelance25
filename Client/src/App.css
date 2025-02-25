@@ -15,7 +15,8 @@ html {
     font-family: "Poppins", sans-serif;
   }
   body {
-  background: #14181C;
+  /* background: #14181C; */
+  background: #000;
     overflow-x: hidden;
     color: white;
     background-repeat: no-repeat;
@@ -101,7 +102,8 @@ html {
 
 .navbar2 {
  
-  background-color: #333;
+  /* background-color: #333; */
+  /* backdrop-filter: blur(10px); */
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(255, 255, 255);
  
@@ -136,7 +138,7 @@ html {
 }
 
 .navbar2 a:hover, .dropdown:hover .dropbtn {
-  /* background-color: white; */
+  background-color: white;
   color:black;
 }
 

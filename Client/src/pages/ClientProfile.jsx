@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export default function ClientProfile() {
   return (
     <div className="min-h-screen w-screen bg-gradient-to-r from-gray-900 via-black to-gray-900 flex justify-center items-center p-6">

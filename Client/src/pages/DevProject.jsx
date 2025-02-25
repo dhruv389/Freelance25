@@ -20,7 +20,7 @@ export default function DevProject() {
   const [selectedPlan, setSelectedPlan] = useState(plans[2]);
 
   return (
-    <div className="min-h-screen bg-[#14181C] text-white p-6 md:p-12 flex flex-col lg:flex-row gap-8">
+    <div className="min-h-screen  text-white p-6 md:p-12 flex flex-col lg:flex-row gap-8">
       {/* Left Content */}
       <div className="lg:w-2/3 space-y-6">
         <h1 className="text-3xl font-bold">I will develop, design and kickstart your eCommerce Shopify website</h1>

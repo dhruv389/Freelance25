@@ -30,8 +30,8 @@ export default function MainDevProfilePage(onClose) {
   const handleBack = () => setStep((prev) => prev - 1);
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50">
-      <div className="max-w-2xl w-full bg-white text-black p-6 shadow-lg rounded-xl relative">
+    <div className="fixed inset-0 flex items-center justify-center backdrop-blur-lg   bg-opacity-90 z-50">
+      <div className="max-w-[70vw] p-5  flex items-center justify-center flex-col  w-full bg-white/10  shadow-lg rounded-xl relative">
         <button onClick={onClose} className="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
           ✕
         </button>
@@ -44,9 +44,10 @@ export default function MainDevProfilePage(onClose) {
         {step === 5 && <Availability onNext={handleNext} onBack={handleBack} />}
         {step === 6 && <ReviewSubmit formData={formData} onBack={handleBack} />}
         
-        <div className="flex justify-between mt-4">
-          {step > 0 && <Button onClick={handleBack} variant="outline">Back</Button>}
-        </div>
+        {/* <div className="flex justify-between mt-4">
+          {step > 0 && <Button  onClick={handleBack} variant="outline" className="text-black">Back</Button>}
+          <Button onClick={handleNext} variant="outline"  className="text-black">next</Button>
+        </div> */}
       </div>
     </div>
   );
