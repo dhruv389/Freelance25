@@ -64,7 +64,7 @@ const Header = () => {
          
 
           <Link to="/" className="smj-icon bg-yellow-300 rounded-full  h-[3rem]   w-[5rem]" >
-            <img className="h-full  w-full object-contain " src="https://img.freepik.com/free-vector/front-diesel-locomotive-cartoon-style_1308-89378.jpg?t=st=1738393636~exp=1738397236~hmac=8f78d5d66a17eb5919217bf6f1994d04f00deaf7327d8e872cda1d58ab563373&w=360" alt="" />
+            <img className="h-full  w-full object-contain " src="https://technonguide.com/wp-content/uploads/2023/05/Freelancing.webp" alt="" />
           </Link>
 
           <div className="  flex justify-start items-center custom:ml-2 custom:flex custom:justify-center custom:items-center w-full">
