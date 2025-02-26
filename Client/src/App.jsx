@@ -12,6 +12,7 @@ import MainDevProfilePage from "./pages/DevProfileCreation/MainDevProfilePage";
 import DevProject from "./pages/DevProject";
 import Chatbot from "./components/Chatbot";
 import Payment from "./components/Payment";
+import Testing from "./components/Testing";
 
 function App() {
   const router = createBrowserRouter([
@@ -29,7 +30,8 @@ function App() {
       { path: "devcreate", element: <MainDevProfilePage/> },
       { path: "devproject", element: <DevProject/> },
       {path:"chatbot",element:<Chatbot/>},
-      {path:"payment",element:<Payment/>}
+      {path:"payment",element:<Payment/>},
+      {path:"test",element:<Testing/>},
 
         // {
         //   path: 'admindashboard',
