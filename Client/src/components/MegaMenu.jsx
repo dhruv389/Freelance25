@@ -1,4 +1,6 @@
 import React, { useState, forwardRef } from "react";
+import { useRef } from "react";
+import { Link } from "react-router-dom";
 import {
   Carousel,
   CarouselContent,
@@ -8,7 +10,7 @@ import {
 } from "../components/ui/carousel"
 
 
-import { Link } from "react-router-dom";
+
 
 
 
@@ -136,55 +138,79 @@ const freelancingOptions = {
 };
 
 
+
+
 export default function MegaMenu() {
+    const scrollRef = useRef(null);
+
+const scrollLeft = () => {
+  if (scrollRef.current) {
+    scrollRef.current.scrollBy({ left: -200, behavior: "smooth" });
+  }
+};
+
+const scrollRight = () => {
+  if (scrollRef.current) {
+    scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
+  }
+};
+
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="navbar2 border border-gray-500 flex overflow-x-hidden overflow-y-hidden">
-      
+    <div className="relative flex items-center">
+      {/* Left Arrow */}
+      <button
+        className="absolute left-0 z-10 bg-gray-800 text-white p-2  shadow-md"
+        onClick={scrollLeft}
+      >
+        ❮
+      </button>
 
-
-
-
-
-
-
-
-
-      {Object.keys(freelancingOptions).map((category) => (
-        <div className="dropdown text-white " key={category}>
-          <button className="dropbtn w-[12rem] text-sm overflow-hidden" key={category}>
-            {" "}
-            {category}
-            <i className="fa fa-caret-down"></i>
-          </button>
-          <div className="dropdown-content z-50 bg-black border border-gray-400 shadow-lg">
-            <div className="header ">
-             
-             
-              <Link to={`/optionmenu`} className=" w-full flex justify-start ">
-                 <p className="w-[30%] flex justify-start bg-slate-700 pl-5 py-4 rounded-md h-full "> {category}</p>
-             </Link>
-
-            </div>
-            <div className="row" >
-              {freelancingOptions[category].map((option) => (
-                <div className="column"  key={option.title}>
-                <Link
-                to="/suboption"
-                  key={option.title}
-                  href={option.href}
-                  className="block px-4 py-2 hover:bg-gray-200 text-white rounded-md"
-                >
-                  {option.title}
+      {/* Scrollable Buttons */}
+      <div
+        className="navbar2 border border-gray-500 flex overflow-x-hidden overflow-y-hidden scrollbar-hide px-10"
+        ref={scrollRef}
+      >
+        {Object.keys(freelancingOptions).map((category) => (
+          <div className="dropdown text-white " key={category}>
+            <button className="dropbtn py-2 w-[10rem] text-sm overflow-hidden">
+              {category}
+              <i className="fa fa-caret-down"></i>
+            </button>
+            <div className="dropdown-content z-50 bg-black border border-gray-400 shadow-lg">
+              <div className="header">
+                <Link to={`/optionmenu`} className="w-full flex justify-start">
+                  <p className="w-[30%] flex justify-start bg-slate-700 pl-5 py-4 rounded-md h-full">
+                    {category}
+                  </p>
                 </Link>
-                </div>
-            
-              ))}
+              </div>
+              <div className="row">
+                {freelancingOptions[category].map((option) => (
+                  <div className="column" key={option.title}>
+                    <Link
+                      to="/suboption"
+                      href={option.href}
+                      className="block px-4 py-2 hover:bg-gray-200 text-white rounded-md"
+                    >
+                      {option.title}
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+
+      {/* Right Arrow */}
+      <button
+        className="absolute right-0 z-10 bg-gray-800 text-white p-2 rounded-full shadow-md"
+        onClick={scrollRight}
+      >
+        ❯
+      </button>
     </div>
   );
 }

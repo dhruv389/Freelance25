@@ -11,6 +11,7 @@ export default function Experience({ onNext, onBack }) {
 
   const addExperience = () => {
     setExperience([...experience, { company: "", position: "", description: "", startDate: "", endDate: "" }]);
+    onNext({ experience })
   };
 
   const handleChange = (index, e) => {
@@ -18,11 +19,12 @@ export default function Experience({ onNext, onBack }) {
     const updated = [...experience];
     updated[index][name] = value;
     setExperience(updated);
+    onNext({ experience })
   };
 
   return (
     <motion.div
-      className="h-full w-full flex flex-col items-center  justify-center overflow-y-auto text-white p-6"
+      className="h-full w-full flex flex-col items-center bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl  justify-center overflow-y-auto text-white p-6"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -59,15 +61,7 @@ export default function Experience({ onNext, onBack }) {
           </motion.div>
         ))}
 
-        <div className="flex justify-between">
-          <Button onClick={onBack} className=" hover:bg-gray-800 text-white p-3 rounded-lg shadow-md">
-            Back
-          </Button>
-         
-          <Button onClick={() => onNext({ experience })} className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-lg shadow-md">
-            Next
-          </Button>
-        </div>
+
       </div>
     </motion.div>
   );

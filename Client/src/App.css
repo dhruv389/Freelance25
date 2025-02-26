@@ -77,7 +77,7 @@ html {
 
 .navbar {
   position: relative;
-  height: 3rem;
+  min-height: 3rem;
   background-color: transparent;
   display: flex;
   align-items: center;
@@ -85,6 +85,7 @@ html {
   gap: 20px;
   flex-wrap: wrap;
   padding-left: 1rem;
+
 }
 
 
@@ -129,23 +130,21 @@ html {
   border: none;
   outline: none;
   color: white;
-  padding: 14px 16px;
   background-color: inherit;
   font: inherit;
   margin: 0;
-   font-size: small;
-   
+  font-size: small;
+  margin-left: 2rem;
 }
 
-.navbar2 a:hover, .dropdown:hover .dropbtn {
+.dropbtn:hover {
   background-color: white;
-  color:black;
+  color: black;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  /* background: white; */
   width: 100%;
   left: 0;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -153,13 +152,13 @@ html {
 }
 
 .dropdown-content .header {
- 
   padding: 16px;
   color: white;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
+  transition-delay: 1s;
 }
 
 /* Create three equal columns that floats next to each other */

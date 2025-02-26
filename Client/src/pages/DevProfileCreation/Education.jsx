@@ -1,11 +1,16 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
-export default function Education({ onNext, onBack }) {
+export default function Education({ onNext }) {
   const [education, setEducation] = useState([]);
 
   const addEducation = () => {
     setEducation([...education, { institution: "", degree: "", fieldOfStudy: "" }]);
+    onNext({ education });
   };
 
   const handleChange = (index, e) => {
@@ -13,20 +18,50 @@ export default function Education({ onNext, onBack }) {
     const updated = [...education];
     updated[index][name] = value;
     setEducation(updated);
+    onNext({ education });
   };
 
   return (
-    <div>
+    <motion.div 
+      className="w-full h-full flex flex-col items-center bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl space-y-6 p-6 bg-black/50 backdrop-blur-md rounded-2xl shadow-lg text-white"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h2 className="text-2xl font-semibold">Education</h2>
+      <Separator className="w-full bg-white/20" />
+      
       {education.map((edu, index) => (
-        <div key={index}>
-          <input name="institution" placeholder="Institution" onChange={(e) => handleChange(index, e)} />
-          <input name="degree" placeholder="Degree" onChange={(e) => handleChange(index, e)} />
-          <input name="fieldOfStudy" placeholder="Field of Study" onChange={(e) => handleChange(index, e)} />
-        </div>
+        <Card key={index} className="w-full p-4 bg-black/30 rounded-lg shadow-md">
+          <div className="space-y-4">
+            <Input 
+              name="institution" 
+              placeholder="Institution" 
+              value={edu.institution} 
+              onChange={(e) => handleChange(index, e)}
+              className="bg-black/60 text-white border-gray-500 rounded"
+            />
+            <Input 
+              name="degree" 
+              placeholder="Degree" 
+              value={edu.degree} 
+              onChange={(e) => handleChange(index, e)}
+              className="bg-black/60 text-white border-gray-500 rounded"
+            />
+            <Input 
+              name="fieldOfStudy" 
+              placeholder="Field of Study" 
+              value={edu.fieldOfStudy} 
+              onChange={(e) => handleChange(index, e)}
+              className="bg-black/60 text-white border-gray-500 rounded"
+            />
+          </div>
+        </Card>
       ))}
-      <Button onClick={addEducation}>Add Education</Button>
-      <Button onClick={onBack}>Back</Button>
-      <Button onClick={() => onNext({ education })}>Next</Button>
-    </div>
+      
+      <Button onClick={addEducation} className="bg-white text-black hover:bg-gray-200">
+        Add Education
+      </Button>
+    </motion.div>
   );
 }

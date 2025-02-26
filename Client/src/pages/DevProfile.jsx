@@ -1,5 +1,6 @@
 import React from "react";
 import DevReview from "../components/DevReview";
+import Portfolio from "./DevProfileCreation/Portfolio";
 const DevProfile = () => {
   const gigs = [
     {
@@ -178,6 +179,7 @@ const DevProfile = () => {
       {/* Gigs Section */}
       <div className="w-[85vw] mx-auto mt-6">
         <h3 className="text-xl font-semibold mb-4">My Gigs</h3>
+        <Portfolio/>
         <div className="grid w-[90%] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {gigs.map((gig, index) => (
             <div key={index} className="bg-white shadow-lg rounded-xl p-4">
