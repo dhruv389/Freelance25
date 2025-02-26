@@ -55,26 +55,12 @@ const Header = () => {
   };
 
   return (
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <div className="flex flex-col gap-3 pt-5  ">
-
-      <div className="navbar mb-2">
-        <div className="h-[2rem] gap-4 custom:gap-1 custom:w-full  flex w-[40%]">
-=======
-    <div className="flex flex-col gap-3 fixed z-50 backdrop-filter backdrop-blur-2xl w-full top-0 left-0">
-
-      <div className="navbar ">
-        <div className=" gap-4 custom:gap-1 custom:w-full  flex w-[40%]">
->>>>>>> 6dddc20923d005df1f25fb680a46b66e64355e7a
-=======
 
     <div className="flex flex-col gap-3 fixed z-50 backdrop-filter backdrop-blur-2xl w-full top-0 left-0">
 
       <div className="navbar ">
         <div className=" gap-4 custom:gap-1 custom:w-full  flex w-[40%]">
 
->>>>>>> e0d15a4cfa8028ce3becb8a93f07ecc0b9d886d7
           <div className="hidden custom:flex custom:pt-4"> </div>
 
           <Link to="/" className="smj-icon bg-yellow-300 rounded-full  h-[3rem]   w-[5rem]" >
