@@ -1,12 +1,11 @@
 import React from "react";
 import DevReview from "../components/DevReview";
-import Portfolio from "./DevProfileCreation/Portfolio";
+
 import { useUser } from "@clerk/clerk-react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams,Link } from "react-router-dom";
-const DevProfile = () => {
-  const {id}=useParams();
+import { useParams } from "react-router-dom";
+const DevProfile2 = () => {
   const gigs = [
     {
       title: "Website Development",
@@ -48,26 +47,25 @@ const DevProfile = () => {
 
   const [user2, setUser] = useState(null);
 
-
+  const {objectid}= useParams();
 
 
 
   const [loading, setLoading] = useState(false);
-   const [x,sx]=useState(0);
+ 
   const [devproject , setdevproject]=useState([]);
   const [error, setError] = useState("");
    
   useEffect(() => {
-    if (id) {
-      fetchProject(id);
+    if (user) {
+      fetchProject(user.id);
     }
   }, []);
   
   const fetchProject = async (clerkId) => {
     console.log(clerkId);
-    if(user?.id === id) sx(1);
     try {
-      const response = await axios.get(`http://localhost:8080/projects/getProjectbyclerkid/${id}`);
+      const response = await axios.get(`http://localhost:8080/projects/getProjectbyclerkid/${clerkId}`);
       setdevproject(response.data);
       console.log(response.data);
     } catch (err) {
@@ -80,8 +78,7 @@ const DevProfile = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-     if(user?.id === id) sx(1);
-        const response = await axios.get(`http://localhost:8080/freelancer/getfreelancer/${id}`);
+        const response = await axios.get(`http://localhost:8080/freelancer/getfreelancerbyobjectId/${user?.id}`);
         setUser(response.data);
         console.log(response.data);
       } catch (err) {
@@ -103,7 +100,7 @@ const DevProfile = () => {
   return (
     <div className="min-h-screen w-screen p-6 flex justify-start items-start flex-col">
       {/* Profile Section */}
-      {user2 && (<div className="flex justify-start flex-col items-center">
+      {user2 && (<div>
         <div className="w-screen h-full flex justify-around items-start">
       <div className="w-[60%] flex items-start   flex-col    justify-start  ">
     
@@ -209,7 +206,7 @@ const DevProfile = () => {
 
 
       <div className="w-[30%]  h-[25rem]">
-      <div className="max-w-[88%] flex flex-col  h-[85%] bg-white rounded-lg shadow-md p-6">
+      <div className="max-w-[88%]  h-[85%] bg-white rounded-lg shadow-md p-6">
       <div className="flex items-center mb-4">
         <img
           className="w-12 h-12 rounded-full mr-4"
@@ -255,7 +252,7 @@ const DevProfile = () => {
         </svg>
         Contact me
       </button>
-      <Link to="/videocall" className="w-full border border-gray-300 text-gray-700 py-2 rounded-md flex items-center justify-center">
+      <button className="w-full border border-gray-300 text-gray-700 py-2 rounded-md flex items-center justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5 mr-2"
@@ -271,7 +268,7 @@ const DevProfile = () => {
           />
         </svg>
         Book a consultation
-      </Link>
+      </button>
       <p className="text-sm text-gray-500 mt-4 text-center">
         Average response time: 1 hour
       </p>
@@ -281,7 +278,6 @@ const DevProfile = () => {
       {/* Gigs Section */}
       <div className="w-[85vw] mx-auto mt-6">
         <h3 className="text-xl font-semibold mb-4">My Gigs</h3>
-        {x && ( <Portfolio/>)}
        
         <div className="grid w-[90%] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       
@@ -310,14 +306,10 @@ const DevProfile = () => {
       </div>
          
    <div className="w-screen text-center"><h1>Reviews</h1></div>
-   <div className="w-[80vw]">
-   <DevReview/>
-   </div>
-
-   
+     <DevReview/>
      </div>)} 
     </div>
   );
 };
 
-export default DevProfile;
+export default DevProfile2;

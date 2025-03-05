@@ -15,18 +15,43 @@ import {
 
 
 const freelancingOptions = {
-  "Web Development": [
-    { title: "Frontend Development", href: "/freelance/web-dev/frontend" },
-    { title: "Backend Development", href: "/freelance/web-dev/backend" },
-    { title: "Full Stack Development", href: "/freelance/web-dev/fullstack" },
-    { title: "WordPress Development", href: "/freelance/web-dev/wordpress" },
-    { title: "E-commerce Development", href: "/freelance/web-dev/ecommerce" },
-    { title: "Web Design", href: "/freelance/web-dev/design" },
-    { title: "API Development", href: "/freelance/web-dev/api" },
-    { title: "Web Application Security", href: "/freelance/web-dev/security" },
-    { title: "Progressive Web Apps (PWA)", href: "/freelance/web-dev/pwa" },
-    { title: "CMS Development", href: "/freelance/web-dev/cms" },
-  ],
+  "programming languages":[
+    { "title": "JavaScript", "href": "/freelance/languages/javascript" },
+    { "title": "Python", "href": "/freelance/languages/python" },
+    { "title": "Java", "href": "/freelance/languages/java" },
+    { "title": "C#", "href": "/freelance/languages/csharp" },
+    { "title": "PHP", "href": "/freelance/languages/php" },
+    { "title": "Ruby", "href": "/freelance/languages/ruby" },
+    { "title": "Go", "href": "/freelance/languages/go" },
+    { "title": "Swift", "href": "/freelance/languages/swift" },
+    { "title": "Kotlin", "href": "/freelance/languages/kotlin" },
+    { "title": "TypeScript", "href": "/freelance/languages/typescript" },
+    { "title": "Rust", "href": "/freelance/languages/rust" },
+    { "title": "Dart", "href": "/freelance/languages/dart" },
+    { "title": "React", "href": "/freelance/frameworks/react" },
+ 
+    { "title": "Next.js", "href": "/freelance/frameworks/nextjs" },
+    
+    { "title": "Flask", "href": "/freelance/frameworks/flask" },
+  
+   
+],
+  "Web Development":[
+    { "title": "Frontend Development", "href": "/freelance/web-dev/frontend" },
+    { "title": "Backend Development", "href": "/freelance/web-dev/backend" },
+    { "title": "Full Stack Development", "href": "/freelance/web-dev/fullstack" },
+    { "title": "WordPress Development", "href": "/freelance/web-dev/wordpress" },
+    { "title": "E-commerce Development", "href": "/freelance/web-dev/ecommerce" },
+    { "title": "Web Design", "href": "/freelance/web-dev/design" },
+    { "title": "API Development", "href": "/freelance/web-dev/api" },
+    { "title": "Web Application Security", "href": "/freelance/web-dev/security" },
+    { "title": "Progressive Web Apps (PWA)", "href": "/freelance/web-dev/pwa" },
+    { "title": "CMS Development", "href": "/freelance/web-dev/cms" },
+    { "title": "Mobile App Development", "href": "/freelance/mobile-dev" },
+    { "title": "UI/UX Design", "href": "/freelance/design/ui-ux" },
+    { "title": "DevOps Engineering", "href": "/freelance/devops" },
+   
+],
   "Mobile Development": [
     { title: "iOS Development", href: "/freelance/mobile-dev/ios" },
     { title: "Android Development", href: "/freelance/mobile-dev/android" },
@@ -190,7 +215,7 @@ const scrollRight = () => {
                 {freelancingOptions[category].map((option) => (
                   <div className="column" key={option.title}>
                     <Link
-                      to="/suboption"
+                      to={`/suboption/${option.title}`}
                       href={option.href}
                       className="block px-4 py-2 hover:bg-gray-200 text-white rounded-md"
                     >

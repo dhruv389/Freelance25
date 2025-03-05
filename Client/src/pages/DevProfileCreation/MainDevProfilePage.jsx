@@ -74,7 +74,7 @@ export default function MainDevProfilePage() {
       
          <Education onNext={handleNext}  />
          <Availability onNext={handleNext}  />
-         <ReviewSubmit formData={formData}  />
+         <ReviewSubmit formData={formData} onNext={handleNext} />
         
         {/* <div className="flex justify-between mt-4">
           {step > 0 && <Button  onClick={handleBack} variant="outline" className="text-black">Back</Button>}

@@ -9,7 +9,9 @@ import { Marquee } from "../components/magicui/marquee";
 import { BoxReveal } from "../components/magicui/box-reveal";
 import { AvatarCircles } from "../components/magicui/avatar-circles";
 import { BorderBeam } from "../components/magicui/border-beam";
-
+import Drawer from "../components/Drawer";
+import { useUserContext } from "../context/UserContext.js";
+import {GridPattern} from "../components/magicui/grid-pattern"
 
 import {
   Carousel,
@@ -144,7 +146,7 @@ const ReviewCard = ({ img, name, username, body }) => {
 
 const Home = () => {
 
-
+ 
   const [selectedRole, setSelectedRole] = useState("freelancer");
 
   return (
@@ -198,7 +200,7 @@ const Home = () => {
       <div className="absolute -top-20 left-[15rem] h-[15rem] w-[18rem] bg-green-400 opacity-20 blur-2xl rounded-full"></div>
       <div className="absolute bottom-30 h-[15rem] w-[18rem] bg-green-800 opacity-20 blur-2xl rounded-full"></div>
 
-      <Particles
+      {/* <Particles
         className="absolute inset-0 z-0"
         quantity={100}
         ease={10}
@@ -208,7 +210,29 @@ const Home = () => {
       />
 
 
+ */}
 
+
+ <GridPattern
+        squares={[
+          [4, 4],
+          [5, 1],
+          [8, 2],
+          [5, 3],
+          [5, 5],
+          [10, 10],
+          [12, 15],
+          [15, 10],
+          [10, 15],
+          [15, 10],
+          [10, 15],
+          [15, 10],
+        ]}
+        className={cn(
+          "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
+          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
+        )}
+      />
 
     </div>
 
@@ -224,7 +248,7 @@ const Home = () => {
 
 
 
-<div className=""><p className=''>Services</p></div>
+<div className=""><p className=''>Services</p>  <Drawer/></div>
 
     <Carousel className="w-[80vw] h-[12rem]  mb-[7rem]">
   <CarouselContent className="-ml-1">
@@ -264,7 +288,7 @@ const Home = () => {
         </div>
         <div className="relative">
           <img
-            src="https://img.freepik.com/free-photo/businesswoman-business-teammeeting-conference-videocall-online-greeting-remotely-collegues_482257-10095.jpg?t=st=1740292137~exp=1740295737~hmac=84de113d04f04b58de4196dd056061cafd8d3ab3892e6c6762c0250b833c2c32&w=1800"
+            src="https://www.kickidler.com/assets/images/articles/2317.jpg"
             alt="Professional working"
             className="w-full h-auto rounded-lg object-cover"
           />
@@ -372,13 +396,13 @@ const Home = () => {
           </div>
           </div>
 
-          <div className="w-[30%] h-full">
-            <img src="https://lw.works/_next/image?url=%2Fimages%2Fprojects%2Furlbox-contentlayer-light.png&w=3840&q=75" className='h-[19rem] w-full shadow-xl  shadow-slate-700' alt="" />
+          <div className="w-[30%] h-full object-contain">
+            <img src="https://cdn.prod.website-files.com/604761b6a7e539ea274cfd6b/6630f4ec425715657a558476_Image%20(3).webp" className='h-[15rem]  object-contain w-full shadow-xl  ' alt="" />
           </div>
 
         </div>
       </div>
-    </section>
+  </section>
 
 
 

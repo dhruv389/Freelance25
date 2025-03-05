@@ -1,6 +1,6 @@
-import React from 'react'
+import React ,{useEffect,useState}from 'react'
 import { Link, useNavigate, useNavigation } from 'react-router-dom'
-import { SignedIn, SignedOut, SignInButton, UserButton, SignUpButton } from '@clerk/clerk-react'
+import { SignedIn, SignedOut, SignInButton, UserButton, SignUpButton  } from '@clerk/clerk-react'
 
 import { useFirebase } from '../firebase/firebase';
 import { signOut } from 'firebase/auth';
@@ -12,9 +12,33 @@ import { IoIosLogIn } from "react-icons/io";
 import { PiUserCirclePlusFill } from "react-icons/pi";
 import Swal from 'sweetalert2'
 import MegaMenu from './MegaMenu';
-
+import { useUser } from "@clerk/clerk-react";
+import  Dropdown from "../components/Dropdown";
+import  Dropdown3 from "../components/Dropdown3";
 
 const Header = () => {
+
+const { isSignedIn, user } = useUser();
+  const [x,sx]=useState(1);
+  const [error, setError] = useState("");
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8080/clients/getclient/${user.id}`);
+      
+        if(response.data.role==='Client') sx(0);
+        console.log(response.data.role);
+        console.log(response.data);
+      } catch (err) {
+        setError("User not found or server error.");
+      }
+    };
+  
+    if (user?.id) {
+      fetchUser();
+    }
+  }, [user?.id]);
+
   const firebase = useFirebase();
   //  console.log(firebase.isLoggedin);
   const navigate = useNavigate();
@@ -63,24 +87,21 @@ const Header = () => {
 
          
 
-          <Link to="/" className="smj-icon bg-yellow-300 rounded-full  h-[3rem]   w-[5rem]" >
-            <img className="h-full  w-full object-contain " src="https://img.freepik.com/free-vector/front-diesel-locomotive-cartoon-style_1308-89378.jpg?t=st=1738393636~exp=1738397236~hmac=8f78d5d66a17eb5919217bf6f1994d04f00deaf7327d8e872cda1d58ab563373&w=360" alt="" />
+         
+
+          <Link to="/" className="  flex justify-start items-center custom:ml-2 custom:flex custom:justify-center custom:items-center w-full">
+            <h1 className=" font-semibold text-[2.5rem] custom:text-[2rem]">Skillsphere</h1>
+
           </Link>
-
-          <div className="  flex justify-start items-center custom:ml-2 custom:flex custom:justify-center custom:items-center w-full">
-            <h1 className=" font-semibold text-[2.5rem] custom:text-[2rem]">skillSphere</h1>
-
-          </div>
         </div>
-        {/* <div className="security w-[30%]">
-                <button className="login-btn">
-                    <i className="fa-solid fa-phone-volume">139</i>
-                </button>
-                <p>For Security/Medical Assistance</p>
-            </div> */}
+       
 
 
-        <div className="w-[25%] mr-7 flex justify-center items-center ">
+        <div className="w-[45%] mr-7 flex justify-center items-center ">
+
+        <button>
+           
+        </button>
           <SignedOut >
             <div className="btns h-full custom:hidden flex gap-10 space-around ">
               <Button className="py-4 text-md " variant="ghost"><IoIosLogIn fontSize={"30px"} className='mr-1' /><SignInButton /></Button>
@@ -88,6 +109,10 @@ const Header = () => {
             </div>
           </SignedOut>
           <SignedIn>
+
+
+          <Dropdown3/>
+            <Dropdown/>
 
             <div className="btns pl-20 h-full custom:hidden text-3xl flex  justify-end ">
               <UserButton showName={true} appearance={{

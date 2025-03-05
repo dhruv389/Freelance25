@@ -4,52 +4,38 @@ import ProposalForm from "./ClientProfileCreation/ProposalForm";
 import { useUser } from "@clerk/clerk-react";
 import axios from "axios";
 import ProposalCard from "./ClientProfileCreation/ProposalCard";
-import { useParams , Link} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-
-export default function ClientProfile() {
+export default function ClientProfile2() {
     const [isOpen, setIsOpen] = useState(false);
     const toggleModal = () => {
     setIsOpen(!isOpen);
   };
 
 
+  const {objectid}=useParams();
 
-  const {id}=useParams();
 
 
   const { isSignedIn, user } = useUser();
 
 const [user2, setUser] = useState(null);
 const [error, setError] = useState("");
+console.log(user?.imageUrl);
 
 
 const [proposals, setProposals] = useState([]);
 const [loading, setLoading] = useState(true);
 
 
-useEffect(() => {
-  if (id) {
-    fetchProposals(id);
-  }
-}, [id]);
 
-const fetchProposals = async (clerkId) => {
-  try {
-    const response = await axios.get(`http://localhost:8080/proposals/proposals2/${clerkId}`);
-    setProposals(response.data);
-    console.log(response.data);
-  } catch (err) {
-    setError(err.response?.data?.message || "Error fetching proposals");
-  } finally {
-    setLoading(false);
-  }
-};
+
+
 
 useEffect(() => {
   const fetchUser = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/clients/getclient/${id}`);
+      const response = await axios.get(`http://localhost:8080/clients/getclientbyobjectid/${objectid}`);
       setUser(response.data);
       console.log(response.data);
     } catch (err) {
@@ -57,10 +43,10 @@ useEffect(() => {
     }
   };
 
-  if (id) {
+  if (objectid) {
     fetchUser();
   }
-}, [id]);
+}, [objectid]);
 
 if (error) return <p>{error}</p>;
 if (!user) return <p>Loading...</p>;
@@ -92,11 +78,10 @@ if (!user) return <p>Loading...</p>;
             <p>🌎 Preferred languages</p>
             <p>⏳ Preferred working hours</p>
           </div>
-          <Link to="/videocall" className="mt-4 w-full bg-gray-400 text-white py-2 rounded-lg hover:bg-gray-700 transition">
-            VideoCall
-          </Link>
-          {user.id === user2.user.clerkId && (<ProposalForm isOpen={isOpen} toggleModal={toggleModal} />)}
-          
+          <button className="mt-4 w-full bg-gray-800 text-white py-2 rounded-lg hover:bg-gray-700 transition">
+            Preview Public Profile
+          </button>
+          <ProposalForm isOpen={isOpen} toggleModal={toggleModal} />
         </div>
 
         {/* Right Profile Checklist Section */}

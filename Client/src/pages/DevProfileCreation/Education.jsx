@@ -1,16 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { useUser } from "@clerk/clerk-react";
 
 export default function Education({ onNext }) {
   const [education, setEducation] = useState([]);
-
+  const { isSignedIn, user } = useUser();
+  console.log(user);
+ 
   const addEducation = () => {
     setEducation([...education, { institution: "", degree: "", fieldOfStudy: "" }]);
     onNext({ education });
+    onNext({clerkId: user?.id});
   };
 
   const handleChange = (index, e) => {
@@ -19,6 +23,7 @@ export default function Education({ onNext }) {
     updated[index][name] = value;
     setEducation(updated);
     onNext({ education });
+    onNext({clerkId: user?.id});
   };
 
   return (
